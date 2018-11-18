@@ -1,4 +1,4 @@
-package tk.tommy.storm;
+package tk.tommy.storm.demo01;
 
 import org.apache.storm.spout.SpoutOutputCollector;
 import org.apache.storm.task.TopologyContext;
@@ -12,13 +12,11 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.Map;
 
-
-/**
- * 创建spout
- */
+/** 创建spout */
 public class WebLogSpout implements IRichSpout {
 
     private static final long serialVersionUID = 1L;
+    private static final String filename = "c:/tmp/website.log";
 
     private BufferedReader br;
     private SpoutOutputCollector collector = null;
@@ -47,7 +45,7 @@ public class WebLogSpout implements IRichSpout {
             this.collector = collector;
             this.br =
                     new BufferedReader(
-                            new InputStreamReader(new FileInputStream("e:/website.log"), "UTF-8"));
+                            new InputStreamReader(new FileInputStream(filename), "UTF-8"));
         } catch (Exception e) {
             e.printStackTrace();
         }

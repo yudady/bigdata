@@ -1,3 +1,5 @@
 rootProject.name = 'parent'
 include 'zookeeper'
+include 'kafka'
+include 'storm'
 

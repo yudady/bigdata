@@ -1,4 +1,4 @@
-package tk.tommy.storm;
+package tk.tommy.storm.demo01;
 
 import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;

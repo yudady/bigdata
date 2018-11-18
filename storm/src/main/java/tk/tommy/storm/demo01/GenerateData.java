@@ -1,4 +1,4 @@
-package tk.tommy.storm;
+package tk.tommy.storm.demo01;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -7,9 +7,10 @@ import java.util.Random;
 
 /** 创建网站访问日志 */
 public class GenerateData {
+    public static File logFile = new File("c:/tmp/website.log");
 
     public static void main(String[] args) {
-        File logFile = new File("e:/website.log");
+
         Random random = new Random();
 
         // 1 网站名称
