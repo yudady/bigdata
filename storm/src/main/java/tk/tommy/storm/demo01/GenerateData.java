@@ -4,9 +4,12 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Random;
+import java.util.logging.Logger;
 
 /** 创建网站访问日志 */
 public class GenerateData {
+
+
     public static File logFile = new File("c:/tmp/website.log");
 
     public static void main(String[] args) {

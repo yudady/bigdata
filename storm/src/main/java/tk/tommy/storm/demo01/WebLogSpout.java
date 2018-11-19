@@ -6,6 +6,8 @@ import org.apache.storm.topology.IRichSpout;
 import org.apache.storm.topology.OutputFieldsDeclarer;
 import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Values;
+import org.slf4j.Logger;
+import tk.tommy.storm.tools.LogUtils;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -14,6 +16,7 @@ import java.util.Map;
 
 /** 创建spout */
 public class WebLogSpout implements IRichSpout {
+    public static Logger logger = LogUtils.spout;
 
     private static final long serialVersionUID = 1L;
     private static final String filename = "c:/tmp/website.log";
@@ -27,6 +30,31 @@ public class WebLogSpout implements IRichSpout {
         // 循环调用的方法
         try {
             while ((str = this.br.readLine()) != null) {
+                logger.info("IRichSpout : " + str);
+                logger.info("IRichSpout : " + str);
+                logger.info("IRichSpout : " + str);
+                logger.info("IRichSpout : " + str);
+                logger.info("IRichSpout : " + str);
+                logger.warn("IRichSpout : " + str);
+                logger.warn("IRichSpout : " + str);
+                logger.warn("IRichSpout : " + str);
+                logger.warn("IRichSpout : " + str);
+                logger.warn("IRichSpout : " + str);
+                logger.warn("IRichSpout : " + str);
+                logger.warn("IRichSpout : " + str);
+                logger.info("IRichSpout : " + str);
+                logger.info("IRichSpout : " + str);
+                logger.info("IRichSpout : " + str);
+                logger.info("IRichSpout : " + str);
+                logger.info("IRichSpout : " + str);
+                logger.error("IRichSpout : " + str);
+                logger.info("IRichSpout : " + str);
+                logger.info("IRichSpout : " + str);
+                logger.info("IRichSpout : " + str);
+                logger.info("IRichSpout : " + str);
+                logger.info("IRichSpout : " + str);
+                logger.info("IRichSpout : " + str);
+                logger.info("IRichSpout : " + str);
                 // 发射出去
                 collector.emit(new Values(str));
 

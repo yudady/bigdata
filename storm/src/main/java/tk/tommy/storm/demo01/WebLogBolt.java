@@ -6,11 +6,15 @@ import org.apache.storm.topology.IRichBolt;
 import org.apache.storm.topology.OutputFieldsDeclarer;
 import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Tuple;
+import org.slf4j.Logger;
+import tk.tommy.storm.tools.LogUtils;
 
 import java.util.Map;
 
 /** 创建bolt */
 public class WebLogBolt implements IRichBolt {
+
+    public static Logger logger = LogUtils.bolt;
 
     private static final long serialVersionUID = 1L;
     private OutputCollector collector = null;
@@ -37,7 +41,9 @@ public class WebLogBolt implements IRichBolt {
             // 3 应答Spout接收成功
             collector.ack(input);
 
-            Thread.sleep(2000);
+            logger.info("WebLogBolt : " + input);
+
+            Thread.sleep(100);
         } catch (Exception e) {
             // 4 应答Spout接收失败
             collector.fail(input);
