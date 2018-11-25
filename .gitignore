@@ -24,3 +24,9 @@ hs_err_pid*
 *.idea
 */out
 /logs
+*/bin
+*/.classpath
+*/.project
+*/.settings
+*/**/rebel.xml
+**/.gradle
